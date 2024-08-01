@@ -1,0 +1,208 @@
+<?php
+  // error reporting
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+
+  // Import functions
+  require_once('validation.php');
+
+  // Validate form submission
+  validate();
+ ?>
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Selena Chow</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="search.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+          // This code checks to make sure DOM has been loaded in the browser
+          $(function () {
+            // Your code goes here
+            $(".connect-button").on("click", () => { $("nav form").fadeIn();
+            
+          })
+            $(".close-button").on("click", () => { $("nav form").fadeOut();
+            $(".connect-button").focus();
+          })
+
+
+          });
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav>
+
+            <button
+              class="connect-button"
+              id="open-search"
+              aria-label="opens/unhides the search form"
+            >
+              <i class="fa fa-comments-o" aria-hidden="true"></i>
+            </button>
+      
+            <div class="heroBlock heading-typing">
+                <div class="heroTextTyping">
+                    Hi! I'm Selena.     
+                </div>
+                <div class="heroNavigation">
+                    <div id="aboutDone"><a href="#aboutBlock">About</a></div>
+                    <div id="projectsDone"><a href="#projectsBlock">Portfolio</a></div>
+                    <!-- <div id="contactDone"><a href="#contactBlock">Contact</a></div>
+                     -->
+                    <div id="linkedinDone"><a href="https://www.linkedin.com/in/selena-chow/">LinkedIn</a></div>
+                    
+                </div>
+    
+            </div>
+      
+            
+            <form
+              method="post"
+              action="index.php"
+              class="connect-form"
+            >
+            <h2>LET'S CONNECT</h2>
+                <label for = "name"><i class="fa fa-user fa-fw"></i></span>
+                <input class="form-control" type="text" required placeholder="YOUR NAME" name = "name">
+              
+                <?php the_validation_message('name'); ?>
+                <br>
+                <label for = "email"><i class="fa fa-envelope-o fa-fw"></i></label>
+                <input class="form-control" for = "email" required type="email" placeholder="YOU EMAIL ADDRESS">
+                
+                <br>
+
+                <label for = "comment"><i class="fa fa-comment-o"></i></label>
+                <textarea class="form-control" for = "comment" type="text" placeholder="MESSAGE" minlength="2" maxlength="20" required style="height: 20%; width: 50%" ></textarea>
+                <br>
+                <!-- Display validation message checkbox group -->
+                <?php the_validation_message('comment'); ?>
+
+  
+      
+              <button class = "submit" name = "button" type="submit" aria-label="submit search button searches the page for the keyword the user enters into the search bar">
+                SUBMIT
+              </button>
+              <?php the_results(); ?>
+      
+              <button
+                type="button"
+                class="close-button"
+                aria-label="closes/hides the contact form"
+              >
+                Close <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </form>
+          </nav>
+
+        <div id="aboutBlock">
+            <div class="inner">
+            <div id="aboutText">
+                <div class="hello title">
+                    Hello! <span class="wave">👋</span>
+                </div>
+                
+                <p class = "text-section">
+                    I'm passionate and driven second-year computer science student at Langara College. Throughout my studies, I've had the opportunity to dive deep into the world of programming, exploring various languages such as Java, Python, HTML, CSS, and JavaScript.
+                    
+                    I find writing code incredibly satisfying, especially when I see my creations come to life on the screen. But it's not just about the code for me - I'm also fascinated by the problem-solving aspect of computer science. There's nothing more satisfying than tackling a complex coding challenge and finding a solution that works.
+                    
+                </p>
+                
+
+                <div class="image_border image_border--right">
+                    <img src="selena_chow_photo.jpg" alt="photo of Selena Chow" >
+                    </div>
+
+                <!-- </div> -->
+                
+                <p class="quote">'Until you try, you don’t know what you can’t do.' -- Henry James</p>
+            </div>
+            
+            </div>
+        </div>
+
+        <div id="projectsBlock">
+
+            <div class="projectsCardsBlock">
+                <div class="title portflio-padding">
+                    MY PORTFOLIO
+                </div>
+            
+                    <div class="projectChunk"> 
+                        <div class="projectsCardsHeader">NIGHTGLOW STUDIO
+                        
+                        <span class="highlight-text"><br><br>CO-FOUNDER</span></div>
+                        
+                        <p class = "projectDes">Nightglow was founded by two best friends, Melissa and Selena. Specializing in custom neon signs, Nightglow is an LED neon light shop that has proudly worked with clients such as the BC Lions, Dailyhive, Paramount+, and Vancouver is Awesome. As a female-owned local business, we have always had a deep passion for interior design, lighting fixtures, and aesthetic decor pieces. After discovering LED neon tubes on Amazon, we realized the limitless possibilities and creative potential of this material. With our backgrounds in engineering and graphic design, we help our customers create statement pieces that light up any space with a unique and vibrant ambiance.</p>
+                        
+                        <code class = "codePart">JavaScript, HTML, CSS, Shopify</code>
+
+                        <a href="https://nightglowstudio.com" class ="linktoProject">   <i class="fa fa-arrow-right" aria-hidden="true"></i> nightglowstudio.com</a>
+
+                        <a class="image-right" href="https://nightglowstudio.com" onmouseover=""><img class="projectsCards" src="nightglow.png" alt="a screenshot of the nightglowstudio.com"></a>
+            
+                    
+                </div>
+                <div class="projectChunk"> 
+                    <div class="projectsCardsHeader">DUCK POND
+                    
+                    <span class="highlight-text"><br><br>2022 SYSTEMHACKS 3RD PLACE - 150 COMPETITORS</span></div>
+                    
+                    <div class = "projectDes">The COVID-19 pandemic has had a major effect on our lives. Many of us are facing challenges that can be stressful, overwhelming, and cause strong emotions. We created a program that would help alleviate stress, entertain, and bring a smile :&#41;
+                    
+                    Unity project that placed third among the grand finalists at Simon Fraser University's 2022 Quackathon. Developed by Unity first-timers Brian Le, Richard Wang, Tommy Son, and myself.
+                    </div>
+                    
+                    <code class = "codePart">Unity, C#</code>
+
+
+                    <a class ="linktoProject" href = "https://github.com/gosdongs/Duck-Pond/tree/main"><i class="fa fa-arrow-right" aria-hidden="true"></i> Duck Pond</a>
+
+                    <a class="image-right" href="https://github.com/gosdongs/Duck-Pond/tree/main" onmouseover=""><img class = "projectsCards" src="duck-pond-demo.gif" alt="duck pond demo" ></a>
+
+
+    
+                </div>
+            </div>
+        </div>
+
+             <footer>
+                
+                <!-- <p>Let's connect!</p> -->
+
+                
+                <ul>
+                  <li>
+                    <i class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/Selenachow">  GitHub</a>          
+                  </li>
+                    
+                  <li>
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i><a href="https://www.linkedin.com/in/selena-chow/">  Linkedin</a>
+
+                  </li>
+                  <li>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <a href="mailto:selena.chow@icloud.com">  Email</a>
+                    
+                  </li>
+                </ul>
+
+                
+                <script src="script.js" async defer></script> 
+              </footer>
+    </body>
+</html>

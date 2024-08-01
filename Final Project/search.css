@@ -1,0 +1,90 @@
+.connect-form
+{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(115, 189, 212, 0.912);
+
+	height:100vh;
+	width:100vw;
+
+
+	padding-top: 30vh;
+	padding-left: 10vh;
+
+	font-size: 1rem;
+
+	color:white;
+
+    border: 1px;;
+    border-color: white;
+    z-index: 9;
+}
+
+.connect-form button
+{
+
+	color:white;
+    background-color: transparent;
+    border-color: white;
+	border:2px solid white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 9;
+}
+
+.connect-form .close-button
+{
+	position: fixed;
+
+	top:2rem;
+	right:2rem;
+
+	z-index: 10;
+    border: 1px;;
+    border-color: white;
+}
+
+h2
+{
+	font-size: 27px;
+	color:white;
+}
+
+
+form
+{
+	display: none;
+}
+
+
+::placeholder {
+    color: white;
+    opacity: 1;
+    font-family: "Poppins", helvetica;
+}
+textarea {
+    vertical-align: middle;
+    z-index: 10;
+    
+}
+
+.connect-button {
+	position: fixed;
+
+	bottom:4rem;
+	right:4rem;
+
+	z-index: 9;
+    border: 1px;;
+    border-color: white;    
+    transition: border-width 0.5s ease;
+    color:gray;
+    background-color: goldenrod;
+    border-color: gray;
+	border:2px solid gray;
+    padding: 20px;
+    font-size: 3vh;
+    border-radius: 40%;
+  }
